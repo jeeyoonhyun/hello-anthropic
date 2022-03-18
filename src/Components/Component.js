@@ -1,14 +1,9 @@
 import React from "react";
 
 class Component extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     handleChange () {
         console.log('handle change called')
     }
-
     render () {
         return (
         <div className="">
