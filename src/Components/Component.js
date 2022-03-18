@@ -1,20 +1,27 @@
+import ReactDOM from "react";
 import React, { useState } from "react";
 
-function Component(props) {
-    const [count, setCount] = useState(0);
+class Component extends React.Component {
+    constructor(props) {
+        super(props)
+    }
 
-    return (
-        <div className="flex gap-8">
-            <button
-                className="rounded-full bg-zinc-100 hover:bg-zinc-50 active:translate-y-1 p-3 font-semibold text-slate-600 hover:text-slate-800 drop-shadow-md"
-                onClick={() => setCount(count + 1)}
-            >
-                {props.text}
-            </button>
-            <p className="pt-3">{count}</p>
+    handleChange () {
+        console.log('handle change called')
+    }
+
+    render () {
+        return (
+        <div className="">
+        <div
+          contentEditable="true"
+          className="inputText h-screen w-full overflow-hidden p-12 focus:outline-none"
+          onInput={this.handleChange}
+        >
         </div>
-
+        </div>
     );
+    }
 }
 
-export default Component;
+export default Component

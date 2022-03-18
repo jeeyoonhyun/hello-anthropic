@@ -3,18 +3,47 @@ import Component from './Components/Component';
 
 function App() {
   return (
-    <div className="App ml-8 mt-16 mr-8">
-      <header>
-        <h1 className="flex text-4xl text-slate-800 font-bold">Hello Anthropic!</h1>
-      </header>
-      <section className="flex flex-col gap-8 mt-8">
-        <p className="text-left w-3/5 text-slate-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur enim augue, viverra eu finibus et, luctus luctus felis. Quisque ullamcorper tortor vitae diam hendrerit maximus ac ac ligula. In eget lorem vitae risus fringilla tempus. Pellentesque sed ultrices ex. Integer tempor semper consequat. Integer eros est, dignissim quis orci ut, ullamcorper tincidunt eros. Nulla facilisi. Mauris at sollicitudin nunc. Suspendisse posuere orci quam, quis condimentum libero facilisis nec. Morbi posuere lorem eget nibh venenatis cursus.</p>
-        <div className="flex justify-start">
-          <Component text={`I'm a button`}/>
+    <div className="App ml-8 mr-8 grid grid-cols-1 md:grid-cols-2 bg-slate-200">
+      <section className="w-2/8"> 
+        <h1>Controls</h1>
+        <div>
+            <div>Server</div>
+            <input></input>
         </div>
-        
+        <div>
+            <div>Top P</div>
+            <input></input>
+        </div>
+        <div>
+            <div>Top K</div>
+            <input></input>
+        </div>
+        <div>
+            <div>Temp</div>
+            <input></input>
+        </div>
+        <div>
+            <div>Sample Length</div>
+            <input></input>
+        </div>
+        <div>
+            <div>Stop sequence</div>
+            <input></input>
+        </div>
       </section>    
       
+      <section className="w-6/8 flex flex-col">
+        <button
+          className="p-8 bg-black text-white"
+          onClick={() => {
+            document.querySelector('.inputText').innerHTML += `
+              <span class="bg-orange-800 text-white"> This will be added</span>
+            `
+          }}>
+          Button
+        </button>
+        <Component />
+      </section>
     </div>
   );
 }
